@@ -24,8 +24,8 @@ jobs:
 
       - name: List files 
         run: |
-	echo $PWD
-	ls -alrt
+        echo $PWD
+        ls -alrt
 
   deploy:
     needs: build
