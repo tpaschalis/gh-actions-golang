@@ -23,9 +23,7 @@ jobs:
         run: go test -v . -bench=.
 
       - name: List files 
-        run: |
-        echo $PWD
-        ls -alrt
+        run:  echo $PWD
 
   deploy:
     needs: build
