@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "time"
 
 func main() {
 	fmt.Println("Running for GH Actions!")
@@ -12,6 +13,7 @@ func main() {
 }
 
 func fibonacci(n int) int {
+	time.Sleep(10 * time.Millisecond) // Evil code
 	cur := 0
 	i, j := 0, 1
 	for cur < n {
