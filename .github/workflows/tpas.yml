@@ -29,7 +29,7 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: UplBen
-          path: '$GITHUB_WORKSPACE/latest-benchmarks.txt'
+          path: latest-benchmarks.txt
 
 
   deploy:
