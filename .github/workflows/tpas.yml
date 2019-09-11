@@ -29,8 +29,6 @@ jobs:
         uses: actions/upload-artifact@master
         with:
           name: UplBen
-          env:
-            HOME: $HOME
           path: $HOME/latest-benchmarks.txt
 
 
