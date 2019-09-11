@@ -59,7 +59,7 @@ jobs:
       run: go build .
 
     - name: Upload binary to S3 bucket
-      uses: tpaschalis/s3-sync-action@master
+      uses: tpaschalis/s3-cp-action@master
       with:
         args: --acl public-read
       env:
