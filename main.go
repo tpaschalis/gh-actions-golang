@@ -2,9 +2,11 @@ package main
 
 import "fmt"
 import "time"
+import "github.com/Pallinder/go-randomdata"
 
 func main() {
 	fmt.Println("Running for GH Actions!")
+	fmt.Println("A round of applause for", randomdata.SillyName())
 
 	fmt.Println(fibonacci(5))
 	fmt.Println(fibonacci(6))
