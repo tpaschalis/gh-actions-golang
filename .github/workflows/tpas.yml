@@ -20,16 +20,16 @@ jobs:
         run: go test -v .
 
       - name: Benchmark
-        run: go test -v . -bench=.  2>&1 | tee $HOME/latest-benchmarks.txt
+        run: go test -v . -bench=.  2>&1 | tee $GITHUB_WORKSPACE/latest-benchmarks.txt
 
       - name: List Files
-        run: ls -alrt $HOME
+        run: ls -alrt $GITHUB_WORKSPACE
 
       - name: Upload bencmark artifacts
         uses: actions/upload-artifact@master
         with:
           name: UplBen
-          path: $HOME/latest-benchmarks.txt
+          path: '$GITHUB_WORKSPACE/latest-benchmarks.txt'
 
 
   deploy:
