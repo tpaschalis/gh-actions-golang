@@ -23,7 +23,7 @@ jobs:
         run: go test -v . -bench=.  2>&1 | tee $HOME/latest-benchmarks.txt
 
       - name: List Files
-        run: go test -v . -bench=.  2>&1 | tee $HOME/latest-benchmarks.txt
+        run: ls -alrt $HOME
 
       - name: Upload bencmark artifacts
         uses: actions/upload-artifact@master
