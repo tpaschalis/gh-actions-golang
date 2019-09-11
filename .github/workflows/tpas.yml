@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@master
 
       - name: Download module dependencies
-        env: GOPROXY: "https://proxy.golang.org"
+        env: 
+           GOPROXY: "https://proxy.golang.org"
         run: go mod download
 
       - name: Build
@@ -50,7 +51,8 @@ jobs:
       uses: actions/checkout@master
 
     - name: Download module dependencies
-      env: GOPROXY: "https://proxy.golang.org"
+      env: 
+         GOPROXY: "https://proxy.golang.org"
       run: go mod download
 
     - name: Build
