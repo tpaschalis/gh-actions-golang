@@ -13,6 +13,10 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@master
 
+      - name: Download module dependencies
+        env: GOPROXY: "https://proxy.golang.org"
+        run: go mod download
+
       - name: Build
         run: go build .
 
@@ -44,6 +48,10 @@ jobs:
 
     - name: Check out master branch
       uses: actions/checkout@master
+
+    - name: Download module dependencies
+      env: GOPROXY: "https://proxy.golang.org"
+      run: go mod download
 
     - name: Build
       run: go build .
