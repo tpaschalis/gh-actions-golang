@@ -2,7 +2,7 @@ name: My Simple Pipeline to S3
 on: [push, pull_request]
 jobs:
   build:
-    name: Test and Benchmark
+    name: Test, Benchmark and Build
     runs-on: ubuntu-latest
     steps:
       - name: Set up Go 1.13
@@ -38,7 +38,7 @@ jobs:
 
 
   deploy:
-    name: Build and Deploy
+    name: Clean Build and Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
