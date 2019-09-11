@@ -1,17 +1,17 @@
-name: Build and upload to S3
+name: My Simple Pipeline to S3
 on: [push, pull_request]
 jobs:
   build:
-    name: Build
+    name: Test and Benchmark
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Go 1.12
+      - name: Set up Go 1.13
         uses: actions/setup-go@v1
         with:
-          go-version: 1.12
+          go-version: 1.13
 
       - name: Check out source code
-        uses: actions/checkout@v1
+        uses: actions/checkout@master
 
       - name: Build
         run: go build .
@@ -28,18 +28,19 @@ jobs:
       - name: Upload bencmark artifacts
         uses: actions/upload-artifact@master
         with:
-          name: UplBen
+          name: benchmark-report.txt
           path: latest-benchmarks.txt
 
 
   deploy:
+    name: Build and Deploy
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Go 1.12
+    - name: Set up Go 1.13
       uses: actions/setup-go@v1
       with:
-          go-version: 1.12
+          go-version: 1.13
 
     - name: Check out master branch
       uses: actions/checkout@master
