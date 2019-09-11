@@ -22,13 +22,16 @@ jobs:
       - name: Benchmark
         run: go test -v . -bench=.  2>&1 | tee $HOME/latest-benchmarks.txt
 
+      - name: List Files
+        run: go test -v . -bench=.  2>&1 | tee $HOME/latest-benchmarks.txt
+
       - name: Upload bencmark artifacts
         uses: actions/upload-artifact@master
         with:
           name: UplBen
           env:
             HOME: $HOME
-            path: $HOME/latest-benchmarks.txt
+          path: $HOME/latest-benchmarks.txt
 
 
   deploy:
